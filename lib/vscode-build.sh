@@ -60,8 +60,8 @@ function vscode-build {
   fi
 
   # The build
-  scripts/npm.sh install
-  node --max_old_space_size=2000 /usr/bin/gulp vscode-linux-${_vscode_arch}
+  scripts/npm.sh install || printf "An error has occurred while installing this package's NPM dependencies. Please start a new issue\n at https://github.com/fusion809/VScode-installer/issues/new"
+  node --max_old_space_size=2000 /usr/bin/gulp vscode-linux-${_vscode_arch} || printf "An error has occurred while building this package with gulp. Please report the exact error message you received\n at https://github.com/fusion809/VScode-installer/issues/new"
 }
 
 export -f vscode-build

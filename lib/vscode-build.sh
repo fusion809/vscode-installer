@@ -63,9 +63,14 @@ function vscode-build {
   scripts/npm.sh install || printf "An error has occurred while installing this package's NPM dependencies. Please start a new issue\n at https://github.com/fusion809/VScode-installer/issues/new"
   node --max_old_space_size=2000 /usr/bin/gulp vscode-linux-${_vscode_arch} || printf "An error has occurred while building this package with gulp. Please report the exact error message you received\n at https://github.com/fusion809/VScode-installer/issues/new"
   if [[ $DEST_TYPE == 'local' ]]; then
-    cp -a "$GHUB/VScode-installer/visual-studio-code-oss.desktop" .
-    sed -i -e "s|<%-INST-%>|$GHUB/VSCode-linux-${_vscode_arch}|g" visual-studio-code-oss.desktop
-    printf "VScode is now installed to $GHUB/VSCode-linux-${_vscode_arch}"
+    if [[ -d $GHUBM/VScode-installer ]]; then
+      cp -a "$GHUBM/VScode-installer/visual-studio-code-oss.desktop" .
+      sed -i -e "s|<%-INST-%>|$GHUBM/VSCode-linux-${_vscode_arch}|g" visual-studio-code-oss.desktop
+      printf "VScode is now installed to $GHUBM/VSCode-linux-${_vscode_arch}"
+    else
+      cp -a "$GHUB/VScode-installer/visual-studio-code-oss.desktop" .
+      sed -i -e "s|<%-INST-%>|$GHUB/VSCode-linux-${_vscode_arch}|g" visual-studio-code-oss.desktop
+      printf "VScode is now installed to $GHUB/VSCode-linux-${_vscode_arch}"
   else
     cd ..
 
@@ -76,10 +81,15 @@ function vscode-build {
 
     sudo ln -sf "/opt/VSCode-linux-${_vscode_arch}/code-oss" "/usr/bin/visual-studio-code-oss"
 
-    sed -e "s|<%-INST-%>|/opt/VSCode-linux-${_vscode_arch}|g" "$GHUB/VScode-installer/visual-studio-code-oss.desktop" > "$GHUB/VScode-installer/visual-studio-code-oss2.desktop"
-    sudo install -D -m644 "$GHUB/VScode-installer/visual-studio-code-oss.desktop" \
-            "/usr/share/applications/visual-studio-code-oss.desktop" || sudo install -D -m644 "$GHUBM/VScode-installer/visual-studio-code-oss.desktop" \
+    if [[ -d $GHUBM/VScode-installer ]]; then
+      sed -e "s|<%-INST-%>|/opt/VSCode-linux-${_vscode_arch}|g" "$GHUBM/VScode-installer/visual-studio-code-oss.desktop" > "$GHUBM/VScode-installer/visual-studio-code-oss2.desktop"
+      sudo install -D -m644 "$GHUBM/VScode-installer/visual-studio-code-oss2.desktop" \
+            "/usr/share/applications/visual-studio-code-oss.desktop"
+    else
+      sed -e "s|<%-INST-%>|/opt/VSCode-linux-${_vscode_arch}|g" "$GHUB/VScode-installer/visual-studio-code-oss.desktop" > "$GHUB/VScode-installer/visual-studio-code-oss2.desktop"
+      sudo install -D -m644 "$GHUB/VScode-installer/visual-studio-code-oss2.desktop" \
                         "/usr/share/applications/visual-studio-code-oss.desktop"
+    fi
   fi
 }
 

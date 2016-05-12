@@ -12,7 +12,7 @@ This repository contains shell scripts that are to be used installing [Visual St
 * [Sabayon Linux](http://www.sabayon.org/)
 * [Ubuntu](http://www.ubuntu.com/)
 
-To use the `quick-install.sh` script run:
+To use the [`quick-install.sh`](https://github.com/fusion809/VScode-installer/blob/master/quick-install.sh) script run:
 
 ```bash
 /bin/bash -c "$(curl -sL https://git.io/vrLNn)"

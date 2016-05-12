@@ -5,6 +5,7 @@ function opensuse-build {
   # Get dependencies
   sudo zypper in -y nodejs nodejs-devel make gcc gcc-c++ glibc-devel \
     git-core libgnome-keyring-devel
+  sudo npm install -g gulp
   vscode-build
 }
 

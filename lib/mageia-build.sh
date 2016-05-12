@@ -6,6 +6,7 @@ function mageia-build {
   # Get dependencies
   sudo urpmi git curl libgnome-keyring-devel make gcc gcc-c++
   node-build
+  sudo npm install -g gulp
   vscode-build
 }
 

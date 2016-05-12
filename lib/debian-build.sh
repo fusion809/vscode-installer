@@ -9,4 +9,4 @@ function debian-build {
   vscode-build
 }
 
-export -f vscode-build
+export -f debian-build

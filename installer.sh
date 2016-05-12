@@ -26,7 +26,7 @@ source "./lib/test.sh"                        # Load the test functions
 
 # Load the distribution-specific libraries
 if [[ $LD == "Arch Linux" ]] || [[ $LD == "Manjaro"* ]]; then
-  source "lib/vscode-oss-aur.sh"
+  source "lib/vscode-aur.sh"
 elif [[ $LD == "CentOS"* ]]; then
   source "lib/centos-build.sh"
 elif [[ $LD == "Debian"* ]]; then

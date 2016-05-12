@@ -68,8 +68,8 @@ function vscode-build {
     cd ..
     sudo mv VSCode-linux-${_vscode_arch} /opt
     sudo ln -s "/opt/VSCode-linux-${_vscode_arch}/code-oss" "/usr/bin/visual-studio-code-oss"
-    sudo install -D -m644 "$GHUB/VScode-installer*/visual-studio-code-oss.desktop" \
-            "/usr/share/applications/visual-studio-code-oss.desktop" || sudo install -D -m644 "$GHUBM/VScode-installer*/visual-studio-code-oss.desktop" \
+    sudo install -D -m644 "$GHUB/VScode-installer/visual-studio-code-oss.desktop" \
+            "/usr/share/applications/visual-studio-code-oss.desktop" || sudo install -D -m644 "$GHUBM/VScode-installer/visual-studio-code-oss.desktop" \
                         "/usr/share/applications/visual-studio-code-oss.desktop"
   fi
 }

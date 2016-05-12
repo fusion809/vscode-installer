@@ -5,9 +5,9 @@ This repository contains shell scripts that are to be used installing Visual Stu
 * CentOS
 * Debian
 * Fedora
-* Gentoo Linux
 * Linux Mint
 * Mageia
+* Manjaro Linux
 * openSUSE
 * Sabayon Linux
 * Ubuntu

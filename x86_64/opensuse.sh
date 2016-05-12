@@ -3,8 +3,8 @@ read preference
 
 if [[ $preference == "A" ]]; then
 
-  curl -sL "https://go.microsoft.com/fwlink/?LinkID=760681" > vscode-i386.rpm
-  sudo zypper in -y vscode-i386.rpm
+  curl -sL "https://go.microsoft.com/fwlink/?LinkID=760667" > vscode-x86_64.rpm
+  sudo zypper in -y vscode-x86_64.rpm
 
 elif [[ $preference == "B" ]]; then
 

@@ -71,6 +71,7 @@ function vscode-build {
       cp -a "$GHUB/VScode-installer/visual-studio-code-oss.desktop" .
       sed -i -e "s|<%-INST-%>|$GHUB/VSCode-linux-${_vscode_arch}|g" visual-studio-code-oss.desktop
       printf "VScode is now installed to $GHUB/VSCode-linux-${_vscode_arch}"
+    fi
   else
     cd ..
 

@@ -39,6 +39,8 @@ elif [[ $LD == "Mageia"* ]]; then
   source "lib/mageia-build.sh"
 elif [[ $LD == "openSUSE"* ]]; then
   source "lib/opensuse-build.sh"
+elif [[ $LD == "Sabayon"* ]]; then
+  source "lib/sabayon-build.sh"
 elif [[ $LD == "Ubuntu"* ]]; then
   source "lib/ubuntu-build.sh"
 fi
@@ -53,6 +55,7 @@ DISTROS=(
 'Mageia'
 'Manjaro'                                   #  Manjaro Linux
 'openSUSE'                                  #  openSUSE
+'Sabayon'
 'Ubuntu'                                    #  Ubuntu
 )
 

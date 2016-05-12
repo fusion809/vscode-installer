@@ -7,7 +7,7 @@ if [[ $preference == "A" ]]; then
   sudo dpkg -i vscode-amd64.deb
   sudo apt-get -f install
 
-elif [[ $preferenc == "B" ]]; then
+elif [[ $preference == "B" ]]; then
 
   debian-build
 

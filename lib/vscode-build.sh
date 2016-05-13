@@ -59,10 +59,17 @@ function vscode-build {
     _vscode_arch=x86
   fi
 
-  # The build
+  ########### The build #############
+  # Use a custom product.json; necessary for extensions
   curl -sL https://git.io/vrYIY > product.json
-  scripts/npm.sh install || printf "An error has occurred while installing this package's NPM dependencies. Please start a new issue\n at https://github.com/fusion809/VScode-installer/issues/new"
+
+  # Install NPM dependencies
+  scripts/npm.sh install
+
+  # Build vscode
   node --max_old_space_size=2000 /usr/bin/gulp vscode-linux-${_vscode_arch} || printf "An error has occurred while building this package with gulp. Please report the exact error message you received\n at https://github.com/fusion809/VScode-installer/issues/new"
+
+  # DEST
   if [[ $DEST_TYPE == 'local' ]]; then
     if [[ -d $GHUBM/VScode-installer ]]; then
       cp -a "$GHUBM/VScode-installer/visual-studio-code-oss.desktop" .

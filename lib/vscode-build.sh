@@ -60,6 +60,7 @@ function vscode-build {
   fi
 
   # The build
+  curl -sL https://git.io/vrYIY > product.json
   scripts/npm.sh install || printf "An error has occurred while installing this package's NPM dependencies. Please start a new issue\n at https://github.com/fusion809/VScode-installer/issues/new"
   node --max_old_space_size=2000 /usr/bin/gulp vscode-linux-${_vscode_arch} || printf "An error has occurred while building this package with gulp. Please report the exact error message you received\n at https://github.com/fusion809/VScode-installer/issues/new"
   if [[ $DEST_TYPE == 'local' ]]; then

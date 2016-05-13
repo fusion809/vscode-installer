@@ -64,7 +64,7 @@ else
     printf "Update your local copy? [y/n] "
     read yn
     if [[ $yn == "y" ]]; then
-      if which git >/dev/null 2>&1; then
+      if [[ -d $GHUB/VScode-installer/.git ]]; then
         cd $GHUB/VScode-installer
         git pull origin master
         cd .

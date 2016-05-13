@@ -27,7 +27,7 @@ if [[ -d $GHUBM ]]; then
     printf "Update your local copy? [y/n] "
     read yn
     if [[ $yn == "y" ]]; then
-      if which git >/dev/null 2>&1; then
+      if [[ -d $GHUBM/VScode-installer/.git ]]; then
         cd $GHUBM/VScode-installer
         git pull origin master
         cd .

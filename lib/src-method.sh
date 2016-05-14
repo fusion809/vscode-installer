@@ -53,4 +53,4 @@ function src-method {
 
 }
 
-export src-method
+export -f src-method

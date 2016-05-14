@@ -9,7 +9,7 @@ function node-build {
   ver=$(sed -n 's/pkgver=//p' /tmp/PKGBUILD)
 
   # Check if node already exists
-  if ! comex node; then
+  if ! `comex node`; then
     if [[ $ARCH == "x86_64" ]]; then
       curl -sL http://nodejs.org/dist/v$ver/node-v$ver-linux-x64.tar.xz | tar xJ -C /tmp
       sudo cp -a /tmp/node-v$ver-linux-x64/{bin,lib,share,include} /usr

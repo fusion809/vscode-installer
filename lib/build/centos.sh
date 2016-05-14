@@ -7,7 +7,11 @@ function centos-build {
   sudo yum install -y gcc gcc-c++ make glibc-devel \
     git-core libgnome-keyring-devel libX11-devel
   sudo yum install -y nodejs-devel || node-build
-  sudo npm install -g gulp
+
+  if ! `comex gulp`; then
+    sudo npm install -g gulp
+  fi
+  
   vscode-build
 }
 

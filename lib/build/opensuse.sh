@@ -5,7 +5,11 @@ function opensuse-build {
   # Get dependencies
   sudo zypper in -y nodejs nodejs-devel make gcc gcc-c++ glibc-devel \
     git-core libgnome-keyring-devel libX11-devel
-  sudo npm install -g gulp
+
+  if ! `comex gulp`; then
+    sudo npm install -g gulp
+  fi
+
   vscode-build
 }
 

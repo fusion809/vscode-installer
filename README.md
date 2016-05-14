@@ -5,12 +5,11 @@ This repository contains shell scripts that are to be used installing [Visual St
 * [CentOS](https://www.centos.org/)
 * [Debian](https://www.debian.org/)
 * [Fedora](https://getfedora.org/)
-* [Linux Mint](https://linuxmint.com/)
 * [Mageia](http://www.mageia.org/en/)
 * [Manjaro Linux](https://manjaro.github.io/)
 * [openSUSE](https://www.opensuse.org/)
 * [Sabayon Linux](http://www.sabayon.org/)
-* [Ubuntu](http://www.ubuntu.com/)
+* [Ubuntu](http://www.ubuntu.com/) (and many of its derivatives such as [Linux Mint](https://linuxmint.com/))
 
 To use the [`quick-install.sh`](https://github.com/fusion809/VScode-installer/blob/master/quick-install.sh) script run:
 

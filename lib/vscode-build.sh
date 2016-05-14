@@ -1,5 +1,6 @@
 function vscode-build {
-  export GHUB=$HOME/GitHub
+  export GHUB="$HOME/GitHub"
+  export DESC="Visual Studio Code (VSCode), open-source version. VSCode is a free text editor developed by Microsoft, that is built on the Electron (formerly Atom Shell) framework, with support for a wide variety of different computer languages."
 
   # Get the source code
   printf "How would you like to get the source code? [curl/git/wget/?] "
@@ -85,15 +86,10 @@ function vscode-build {
 
     sudo ln -sf "/opt/VSCode-linux-${_vscode_arch}/code-oss" "/usr/bin/visual-studio-code-oss"
 
-    if [[ -d $GHUBM/VScode-installer ]]; then
-      sed -e "s|<%-INST-%>|/opt/VSCode-linux-${_vscode_arch}|g" "$SRC_DEST/visual-studio-code-oss.desktop" > "$SRC_DEST/visual-studio-code-oss2.desktop"
-      sudo install -D -m644 "$SRC_DEST/visual-studio-code-oss2.desktop" \
-            "/usr/share/applications/visual-studio-code-oss.desktop"
-    else
-      sed -e "s|<%-INST-%>|/opt/VSCode-linux-${_vscode_arch}|g" "$SRC_DEST/visual-studio-code-oss.desktop" > "$SRC_DEST/visual-studio-code-oss2.desktop"
-      sudo install -D -m644 "$SRC_DEST/visual-studio-code-oss2.desktop" \
-                        "/usr/share/applications/visual-studio-code-oss.desktop"
-    fi
+    # Modify desktop configuration file
+    sed -i -e "s|<%-INST-%>|/opt/VSCode-linux-${_vscode_arch}|g" \
+           -e "s|<%-DESC-%>|$DESC|g" "$SRC_DEST/visual-studio-code-oss.desktop"
+    sudo install -D -m644 "$SRC_DEST/visual-studio-code-oss.desktop" "/usr/share/applications/visual-studio-code-oss.desktop"
   fi
 }
 

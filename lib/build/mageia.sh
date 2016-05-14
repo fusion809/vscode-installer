@@ -1,6 +1,6 @@
 #!/bin/bash
-. ./lib/vscode-build.sh
-. ./lib/node-build.sh
+. ./lib/build/vscode.sh
+. ./lib/build/node.sh
 
 function mageia-build {
   # Get dependencies

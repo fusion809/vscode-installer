@@ -10,7 +10,7 @@ Visual Studio Code from the available binary or from source code.
 it will install Visual Studio Code from it.
 
 3. If option 1 or 2 are not possible, or if you opted to install Visual Studio Code from source code it will
-run the `./lib/Visual Studio Code-build.sh` script after installing any missing build/runtime dependencies
+run the `./lib/build/vscode.sh` script after installing any missing build/runtime dependencies
 for Visual Studio Code
 
 Note it will NOT install Visual Studio Code from unofficial binaries or repositories.'

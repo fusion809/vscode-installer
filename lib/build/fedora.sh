@@ -1,4 +1,4 @@
-. ./lib/vscode-build.sh
+. ./lib/build/vscode.sh
 
 function fedora-build {
   # Get dependencies

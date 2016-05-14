@@ -1,6 +1,6 @@
-. ./lib/vscode-build.sh
+. ./lib/build/vscode.sh
 
-function ubuntu-build {
+function debian-build {
   # Get dependencies
   sudo apt-get install -y curl
   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -10,4 +10,4 @@ function ubuntu-build {
   vscode-build
 }
 
-export -f ubuntu-build
+export -f debian-build

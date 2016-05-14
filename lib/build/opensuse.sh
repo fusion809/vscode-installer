@@ -1,5 +1,5 @@
 #!/bin/bash
-. ./lib/vscode-build.sh
+. ./lib/build/vscode.sh
 
 function opensuse-build {
   # Get dependencies

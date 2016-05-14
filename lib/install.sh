@@ -1,11 +1,14 @@
 #!/bin/bash
 function vscode-install {
   wget -cqO- https://github.com/fusion809/VScode-installer/blob/master/resources/visual-studio-code-oss.desktop > $SRC_DEST/visual-studio-code-oss.desktop
+  wget -cqO- https://github.com/fusion809/VScode-installer/blob/master/resources/code.png > $SRC_DEST/code.png
 
   if [[ $DEST_TYPE == 'local' ]]; then
 
     mv "$SRC_DEST/visual-studio-code-oss.desktop" .
-    sed -i -e "s|<%-INST-%>|$GHUBM/VSCode-linux-${_vscode_arch}|g" visual-studio-code-oss.desktop
+    mv "$SRC_DEST/code.png" $GHUBM/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
+    sed -i -e "s|<%-INST-%>|$GHUBM/VSCode-linux-${_vscode_arch}|g" \
+           -e "s|<%-DESC-%>|$DESC|g" visual-studio-code-oss.desktop
     printf "VScode is now installed to $GHUBM/VSCode-linux-${_vscode_arch}"
 
   else
@@ -15,6 +18,8 @@ function vscode-install {
     if [[ -d /opt/VSCode-linux-${_vscode_arch} ]]; then
       sudo rm -rf /opt/VSCode-linux-${_vscode_arch}
     fi
+
+    mv "$SRC_DEST/code.png" $GHUBM/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
 
     sudo mv VSCode-linux-${_vscode_arch} /opt
 

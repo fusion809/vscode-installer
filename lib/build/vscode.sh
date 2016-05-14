@@ -3,6 +3,8 @@ function vscode-build {
   export DESC="Visual Studio Code (VSCode), open-source version. VSCode is a free text editor developed by Microsoft, that is built on the Electron (formerly Atom Shell) framework, with support for a wide variety of different computer languages."
   version
 
+  dest
+
   # Get the source code
   src-method
 

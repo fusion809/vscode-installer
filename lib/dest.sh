@@ -7,7 +7,7 @@ function dest {
     SRC_DEST=$GHUB
   fi
 
-  printf "Do you want to install VScode locally or system-wide? [local/system] "
+  printf "Do you want to install VScode locally or system-wide? [local/system; system is the default] "
   read DEST_TYPE
 
   export SRC_DEST

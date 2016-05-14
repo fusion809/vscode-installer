@@ -19,7 +19,7 @@ function vscode-install {
       sudo rm -rf /opt/VSCode-linux-${_vscode_arch}
     fi
 
-    mv "$SRC_DEST/code.png" $GHUBM/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
+    mv "$SRC_DEST/code.png" $SRC_DEST/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
 
     sudo mv VSCode-linux-${_vscode_arch} /opt
 

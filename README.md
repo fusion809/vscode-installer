@@ -1,4 +1,4 @@
-## VScode-installer
+# Visual Studio Code Installer
 This repository contains shell scripts that are to be used installing [Visual Studio Code](http://code.visualstudio.com/) on a variety of different Linux distributions, including:
 
 * [Arch Linux](https://www.archlinux.org)
@@ -11,6 +11,7 @@ This repository contains shell scripts that are to be used installing [Visual St
 * [Sabayon Linux](http://www.sabayon.org/)
 * [Ubuntu](http://www.ubuntu.com/) (and many of its derivatives such as [Linux Mint](https://linuxmint.com/))
 
+## Use
 To use the [`quick-install.sh`](https://github.com/fusion809/VScode-installer/blob/master/quick-install.sh) script run:
 
 ```bash
@@ -22,3 +23,9 @@ while to use wget to get it run:
 ```bash
 /bin/bash -c "$(wget -cqO- https://git.io/vrLNn)"
 ```
+
+## Contributing
+For details on how to contribute to this project please see the [CONTRIBUTING.md](/CONTRIBUTING.md) file.
+
+## License
+The contents of this repository are licensed under the GNU GPLv3 license, which is found in [LICENSE](/LICENSE).

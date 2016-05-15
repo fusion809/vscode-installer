@@ -12,6 +12,8 @@ This repository contains shell scripts that are to be used installing [Visual St
 * [Sabayon Linux](http://www.sabayon.org/)
 * [Ubuntu](http://www.ubuntu.com/) (and many of its derivatives such as [Linux Mint](https://linuxmint.com/))
 
+The way it detects the operating system it is being run on is by reading the `/etc/os-release` file. So, if you find that running `cat /etc/os-release | grep -w "NAME" | sed 's/NAME=//g' | sed 's/"//g'` returns the distribution names given above, your distribution should be supported by this installer.
+
 ## Use
 To use the [`quick-install.sh`](https://github.com/fusion809/VScode-installer/blob/master/quick-install.sh) script run:
 

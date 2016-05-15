@@ -15,6 +15,10 @@ function fedora-build {
     sudo npm install -g node-gyp
   fi
 
+  if ! [[ -f /usr/bin/gyp ]]; then
+    sudo ln -s /usr/lib/node_modules/node-gyp /usr/bin/gyp
+  fi
+  
   vscode-build
 }
 

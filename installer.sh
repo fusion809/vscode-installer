@@ -67,6 +67,10 @@ for I in "${DISTROS[@]}"                    # Run the appropriate script, for th
 do                                          # we're on
   i=$(echo $I | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g' ) # convert distro string to lowercase
   if [[ $LD == "$I"* ]]; then
-    ./$ARCH/${i}.sh
+    if [[ $i == "manjaro "]]; then
+      ./$ARCH/arch.sh
+    else
+      ./$ARCH/${i}.sh
+    fi
   fi
 done

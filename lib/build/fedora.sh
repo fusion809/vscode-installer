@@ -12,7 +12,7 @@ function fedora-build {
   fi
 
   if ! `comex node-gyp`; then
-    sudo npm install -g gyp
+    sudo npm install -g node-gyp
   fi
 
   vscode-build

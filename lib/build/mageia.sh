@@ -10,7 +10,7 @@ function mageia-build {
   if ! `comex gulp`; then
     sudo npm install -g gulp
   fi
-  
+
   vscode-build
 }
 

@@ -10,6 +10,10 @@ function opensuse-build {
     sudo npm install -g gulp
   fi
 
+  if ! `comex node-gyp`; then
+    sudo npm install -g gyp
+  fi
+
   vscode-build
 }
 

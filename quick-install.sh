@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is a quick install script to install VScode ASAP
+# This is a quick install script to install VSCode ASAP
 export REPO=https://github.com/fusion809/VScode-installer
 export GHUB=$HOME/GitHub
 export GHUBM=$HOME/GitHub/mine
@@ -15,7 +15,7 @@ if [[ -d $GHUBM ]]; then
   cd $GHUBM
 
   if ! [[ -d $GHUBM/VScode-installer ]]; then                                                  # Get the repository, if necessary
-    printf "Getting the VScode-installer repository locally ==>\n"
+    printf "Getting the VScode-installer repository locally. ==>\n"
 
     ## git
     if which git >/dev/null 2>&1; then
@@ -30,30 +30,22 @@ if [[ -d $GHUBM ]]; then
       wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/VScode-installer-master/VScode-installer/ -C $GHUBM
     fi
   else
-    printf "The VScode-installer repository is already locally present! "
-    printf "\n"
-    printf "Update your local copy? [y/n] "
-    read yn
-    if [[ $yn == "y" ]]; then
-      
-      ## git
-      if [[ -d $GHUBM/VScode-installer/.git ]]; then
-        cd $GHUBM/VScode-installer
-        git pull origin master
-        cd .
+    printf "Updating your local copy of VScode-installer. ==>\n"
+    ## git
+    if [[ -d $GHUBM/VScode-installer/.git ]]; then
+      cd $GHUBM/VScode-installer
+      git pull origin master
+      cd .
 
-      ## cURL
-      elif which curl >/dev/null 2>&1; then
-        rm -rf $GHUBM/VScode-installer
-        curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/VScode-installer-master/VScode-installer/ -C $GHUBM
+    ## cURL
+    elif which curl >/dev/null 2>&1; then
+      rm -rf $GHUBM/VScode-installer
+      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/VScode-installer-master/VScode-installer/ -C $GHUBM
 
-      ## wget
-      elif which wget >/dev/null 2>&1; then
-        rm -rf $GHUBM/VScode-installer
-        wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/VScode-installer-master/VScode-installer/ -C $GHUBM
-      fi
-    else
-      printf "Suit yourself!"
+    ## wget
+    elif which wget >/dev/null 2>&1; then
+      rm -rf $GHUBM/VScode-installer
+      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/VScode-installer-master/VScode-installer/ -C $GHUBM
     fi
 
   fi
@@ -62,7 +54,7 @@ else
   cd $GHUB
 
   if ! [[ -d $GHUB/VScode-installer ]]; then                                                  # Get the repository, if necessary
-    printf "Getting the VScode-installer repository locally ==>\n"
+    printf "Getting the VScode-installer repository locally. ==>\n"
 
     ## git
     if which git >/dev/null 2>&1; then
@@ -77,32 +69,24 @@ else
       wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/VScode-installer-master/VScode-installer/ -C $GHUB
     fi
   else
-    printf "The VScode-installer repository is already locally present! "
-    printf "\n"
-    printf "Update your local copy? [y/n] "
-    read yn
-    if [[ $yn == "y" ]]; then
+    printf "Updating your local copy of VScode-installer. ==>\n"
 
-      ## git
-      if [[ -d $GHUB/VScode-installer/.git ]]; then
-        cd $GHUB/VScode-installer
-        git pull origin master
-        cd .
+    ## git
+    if [[ -d $GHUB/VScode-installer/.git ]]; then
+      cd $GHUB/VScode-installer
+      git pull origin master
+      cd .
 
-      ## cURL
-      elif which curl >/dev/null 2>&1; then
-        rm -rf $GHUB/VScode-installer
-        curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/VScode-installer-master/VScode-installer/ -C $GHUB
+    ## cURL
+    elif which curl >/dev/null 2>&1; then
+      rm -rf $GHUB/VScode-installer
+      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/VScode-installer-master/VScode-installer/ -C $GHUB
 
-      ## wget
-      elif which wget >/dev/null 2>&1; then
-        rm -rf $GHUB/VScode-installer
-        wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/VScode-installer-master/VScode-installer/ -C $GHUB
-      fi
-    else
-      printf "Suit yourself!"
+    ## wget
+    elif which wget >/dev/null 2>&1; then
+      rm -rf $GHUB/VScode-installer
+      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/VScode-installer-master/VScode-installer/ -C $GHUB
     fi
-
   fi
 
 fi

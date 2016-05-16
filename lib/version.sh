@@ -1,6 +1,6 @@
 #!/bin/bash
 function version {
-  export pkgver=1.1.0-insider
+  export pkgver=1.1.1
 }
 
 export -f version

@@ -4,7 +4,7 @@
 function fedora-build {
   # Get dependencies
   sudo dnf update
-  sudo dnf install -y make gcc gcc-c++ glibc-devel git-core libgnome-keyring-devel tar npm libX11-devel
+  sudo dnf install -y make gcc gcc-c++ glibc-devel git-core libgnome-keyring-devel tar libX11-devel
   sudo dnf remove -y nodejs
 
   node-build

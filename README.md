@@ -1,5 +1,9 @@
 # Visual Studio Code Installer
-<p><img src="/images/VSCode-1.1.0-Arch.png" alt="Visual Studio Code 1.1.0 running on Arch Linux"><caption><b>Figure 1: Visual Studio Code 1.1.0 running on Arch Linux</b></caption></p>
+<p>
+  <img src="/images/VSCode-1.1.0-Arch.png" alt="Visual Studio Code 1.1.0 running on Arch Linux">
+  <caption><b>Figure 1: Visual Studio Code 1.1.0 running on Arch Linux</b></caption>
+</p>
+
 This repository contains shell scripts that are to be used installing [Visual Studio Code](http://code.visualstudio.com/) on a variety of different Linux distributions, including:
 
 * [Arch Linux](https://www.archlinux.org)

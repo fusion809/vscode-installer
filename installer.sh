@@ -17,6 +17,13 @@ fi
 export LD=$(cat /etc/os-release | grep -w "NAME" | sed 's/NAME=//g' | sed 's/"//g')
 # Distribution architecture
 export ARCH=$(uname -m | sed 's/i[0-9]/i6/g')
+# Installer directory
+export RELDIR=$(dirname "$0" | sed 's|.||g')
+if [[ -n $RELDIR ]]; then
+  export INDIR="$PWD/$RELDIR"
+else
+  export INDIR=$PWD
+fi
 # Distribution version number, e.g., on Fedora 23 it returns 23
 export VER=$(cat /etc/os-release | grep -w "VERSION_ID" | sed 's/VERSION_ID=//g' | sed 's/"//g')
 

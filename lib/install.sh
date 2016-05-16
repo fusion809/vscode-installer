@@ -1,7 +1,6 @@
 #!/bin/bash
 function vscode-install {
-  wget -cqO- https://github.com/fusion809/VScode-installer/raw/master/resources/visual-studio-code-oss.desktop > $SRC_DEST/visual-studio-code-oss.desktop
-  wget -cqO- https://github.com/fusion809/VScode-installer/raw/master/resources/code.png > $SRC_DEST/code.png
+  cp $INDIR/resources/{code.png,visual-studio-code-oss.desktop} $SRC_DEST
 
   if [[ $DEST_TYPE == 'local' ]]; then
 

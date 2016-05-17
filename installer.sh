@@ -68,6 +68,7 @@ DISTROS=(
 'openSUSE'                                  #  openSUSE
 'Sabayon'                                   #  Sabayon
 'Ubuntu'                                    #  Ubuntu
+'Zorin OS'                                  #  Zorin OS
 )
 
 for I in "${DISTROS[@]}"                    # Run the appropriate script, for the distro and architecture
@@ -76,6 +77,8 @@ do                                          # we're on
   if [[ $LD == "$I"* ]]; then
     if [[ $i == "manjaro" ]]; then
       ./$ARCH/arch.sh
+    elif [[ $i == "zorin-os" ]]; then
+      ./$ARCH/ubuntu.sh
     else
       ./$ARCH/${i}.sh
     fi

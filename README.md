@@ -32,6 +32,9 @@ while to use wget to get it run:
 /bin/bash -c "$(wget -cqO- https://git.io/vrLNn)"
 ```
 
+## Version
+This installer is meant to install the latest version of VSCode. 
+
 ## Contributing
 For details on how to contribute to this project please see the [CONTRIBUTING.md](/CONTRIBUTING.md) file.
 

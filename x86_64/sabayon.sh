@@ -12,6 +12,7 @@ if [[ $method == "A" ]]; then
   curl -sL "https://go.microsoft.com/fwlink/?LinkID=620884" > /tmp/$_pkg-stable.zip
   cd /tmp
   bsdtar -xf $_pkg-stable.zip
+  rm $_pkg-stable.zip
 
   sudo install -d "/usr/share/licenses/visual-studio-code"
   sudo install -d "/opt/VSCode"

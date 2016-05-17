@@ -43,7 +43,7 @@ if [[ $LD == "Arch Linux" ]] || [[ $LD == "Manjaro"* ]]; then
   source "lib/build/aur.sh"
 elif [[ $LD == "CentOS"* ]]; then
   source "lib/build/centos.sh"
-elif [[ $LD == "Debian"* ]]; then
+elif [[ $LD == "Debian"* ]] || [[ $LD == "Deepin"* ]]; then
   source "lib/build/debian.sh"
 elif [[ $LD == "Fedora"* ]]; then
   source "lib/build/fedora.sh"
@@ -62,6 +62,7 @@ DISTROS=(
 'Arch'                                      #  Arch Linux
 'CentOS'                                    #  CentOS
 'Debian'                                    #  Debian
+'Deepin'                                    #  Deepin
 'Fedora'                                    #  Fedora
 'Mageia'                                    #  Mageia
 'Manjaro'                                   #  Manjaro Linux
@@ -77,6 +78,8 @@ do                                          # we're on
   if [[ $LD == "$I"* ]]; then
     if [[ $i == "manjaro" ]]; then
       ./$ARCH/arch.sh
+    elif [[ $i == "deepin" ]]; then
+      ./$ARCH/debian.sh
     elif [[ $i == "zorin-os" ]]; then
       ./$ARCH/ubuntu.sh
     else

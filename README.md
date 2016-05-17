@@ -9,6 +9,7 @@ This repository contains shell scripts that are to be used installing [Visual St
 * [Arch Linux](https://www.archlinux.org)
 * [CentOS](https://www.centos.org/)
 * [Debian](https://www.debian.org/)
+* [deepin](https://www.deepin.org/?lang=en)
 * [Fedora](https://getfedora.org/)
 * [Mageia](http://www.mageia.org/en/)
 * [Manjaro Linux](https://manjaro.github.io/)
@@ -33,7 +34,7 @@ while to use wget to get it run:
 ```
 
 ## Version
-This installer is meant to install the latest version of VSCode. 
+This installer is meant to install the latest version of VSCode.
 
 ## Contributing
 For details on how to contribute to this project please see the [CONTRIBUTING.md](/CONTRIBUTING.md) file.

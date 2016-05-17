@@ -53,7 +53,7 @@ elif [[ $LD == "openSUSE"* ]]; then
   source "lib/build/opensuse.sh"
 elif [[ $LD == "Sabayon"* ]]; then
   source "lib/build/sabayon.sh"
-elif [[ $LD == "Ubuntu"* ]]; then
+elif [[ $LD == "Ubuntu"* ]] || [[ $LD == "Zorin OS" ]]; then
   source "lib/build/ubuntu.sh"
 fi
 

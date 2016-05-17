@@ -4,7 +4,7 @@
 
 function vsin {
   if [[ -n "$1" ]]; then
-    cd /tmp/PKGBUILDs/vscode/visual-studio-code-$1
+    cd /tmp/PKGBUILDs/visual-studio-code-$1
   else
     cd /tmp/visual-studio-code
   fi

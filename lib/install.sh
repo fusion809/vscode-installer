@@ -39,7 +39,7 @@ function vscode_install {
     mv $SRC_DEST/VSCode-OSS $HOME/.local/share/
     install -Dm755 $HOME/.local/share/VSCode-OSS/visual-studio-code-oss.desktop $HOME/.local/share/applications/visual-studio-code-oss.desktop
 
-    printf "Installation complete! \nVSCode is now installed to $HOME/.local/share/VSCode-OSS"
+    printf "Installation complete! \nVSCode is now installed to $HOME/.local/share/VSCode-OSS\n"
   fi
 }
 

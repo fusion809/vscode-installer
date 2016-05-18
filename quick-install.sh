@@ -51,6 +51,9 @@ if [[ -d $GHUBM ]]; then
 
   fi
 
+  cd $GHUBM/vscode-installer
+  ./installer.sh
+
 else
   cd $GHUB
 
@@ -90,14 +93,7 @@ else
     fi
   fi
 
-fi
-###########################################################################################################################################
-
-# Run the main installer script
-if [[ -d $GHUB/vscode-installer ]]; then
   cd $GHUB/vscode-installer
   ./installer.sh
-elif [[ -d $GHUBM/vscode-installer ]]; then
-  cd $GHUBM/vscode-installer
-  ./installer.sh
+
 fi

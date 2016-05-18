@@ -15,7 +15,7 @@ function src_method {
       rm -rf $SRC_DEST/${lowedit}-$pkgver
     fi
 
-    wget -cqO- https://github.com/Microsoft/vscode/archive/$pkgver.tar.gz | tar xz -C $SRC_DEST
+    wget -cqO- $UPSRC/archive/$pkgver.tar.gz | tar xz -C $SRC_DEST
 
     cd $SRC_DEST/${lowedit}-$pkgver
 
@@ -24,7 +24,7 @@ function src_method {
   elif [[ $SRC_METHOD == "git" ]]; then
 
     if ! [[ -d $SRC_DEST/vscode ]]; then
-      git clone https://github.com/Microsoft/vscode $SRC_DEST/vscode
+      git clone $UPSRC $SRC_DEST/vscode
     fi
     cd $SRC_DEST/vscode
     git fetch -p
@@ -39,7 +39,7 @@ function src_method {
       rm -rf $SRC_DEST/${lowedit}-$pkgver
     fi
 
-    curl -sL https://github.com/Microsoft/vscode/archive/$pkgver.tar.gz | tar xz -C $SRC_DEST
+    curl -sL $UPSRC/archive/$pkgver.tar.gz | tar xz -C $SRC_DEST
 
     cd $SRC_DEST/${lowedit}-$pkgver
 

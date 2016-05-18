@@ -51,6 +51,8 @@ elif [[ $LD == "Mageia"* ]]; then
   source "lib/build/mageia.sh"
 elif [[ $LD == "openSUSE"* ]]; then
   source "lib/build/opensuse.sh"
+elif [[ -f /etc/pclinuxos-release ]]; then
+  source "lib/build/pclinuxos.sh"
 elif [[ $LD == "Sabayon"* ]]; then
   source "lib/build/sabayon.sh"
 elif [[ $LD == "Ubuntu"* ]] || [[ $LD == "Zorin OS" ]]; then
@@ -67,6 +69,7 @@ DISTROS=(
 'Mageia'                                    #  Mageia
 'Manjaro'                                   #  Manjaro Linux
 'openSUSE'                                  #  openSUSE
+'PCLinuxOS'                                 #  PCLinuxOS
 'Sabayon'                                   #  Sabayon
 'Ubuntu'                                    #  Ubuntu
 'Zorin OS'                                  #  Zorin OS

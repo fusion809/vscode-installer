@@ -35,8 +35,8 @@ fi
 
 if [[ $method == "A" ]]; then
 
-  curl -sL "https://go.microsoft.com/fwlink/?LinkID=760867" > vscode-x86_64.rpm
-  sudo rpm -i vscode-x86_64.rpm
+  curl -sL "https://go.microsoft.com/fwlink/?LinkID=760867" > ${lowedit}-x86_64.rpm
+  sudo rpm -i ${lowedit}-x86_64.rpm
   sudo apt-get -f install
 
 elif [[ $method == "B" ]]; then

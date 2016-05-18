@@ -11,13 +11,13 @@ function src_method {
 
   elif [[ $SRC_METHOD == "wget" ]]; then
 
-    if [[ -d $SRC_DEST/vscode-$pkgver ]]; then
-      rm -rf $SRC_DEST/vscode-$pkgver
+    if [[ -d $SRC_DEST/${lowedit}-$pkgver ]]; then
+      rm -rf $SRC_DEST/${lowedit}-$pkgver
     fi
 
     wget -cqO- https://github.com/Microsoft/vscode/archive/$pkgver.tar.gz | tar xz -C $SRC_DEST
 
-    cd $SRC_DEST/vscode-$pkgver
+    cd $SRC_DEST/${lowedit}-$pkgver
 
     curl -sL https://git.io/vrYIY > product.json
 
@@ -35,13 +35,13 @@ function src_method {
 
   else
 
-    if [[ -d $SRC_DEST/vscode-$pkgver ]]; then
-      rm -rf $SRC_DEST/vscode-$pkgver
+    if [[ -d $SRC_DEST/${lowedit}-$pkgver ]]; then
+      rm -rf $SRC_DEST/${lowedit}-$pkgver
     fi
 
     curl -sL https://github.com/Microsoft/vscode/archive/$pkgver.tar.gz | tar xz -C $SRC_DEST
 
-    cd $SRC_DEST/vscode-$pkgver
+    cd $SRC_DEST/${lowedit}-$pkgver
 
     curl -sL https://git.io/vrYIY > product.json
 

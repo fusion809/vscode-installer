@@ -25,6 +25,7 @@ function vscode_install {
     sudo install -D -m644 "$SRC_DEST/visual-studio-code-oss.desktop" "/usr/share/applications/visual-studio-code-oss.desktop"
 
   else
+    
     mv "$SRC_DEST/visual-studio-code-oss.desktop" $SRC_DEST/VSCode-linux-${_vscode_arch}
     mv "$SRC_DEST/code.png" $SRC_DEST/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
     sed -i -e "s|<%-INST-%>|$HOME/.local/share/VSCode-OSS|g" \

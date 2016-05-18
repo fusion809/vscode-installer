@@ -35,8 +35,8 @@ fi
 
 if [[ $method == "A" ]]; then
 
-  curl -sL "https://go.microsoft.com/fwlink/?LinkID=760681" > vscode-i386.rpm
-  sudo dnf install -y vscode-i386.rpm
+  curl -sL "https://go.microsoft.com/fwlink/?LinkID=760681" > ${lowedit}-i386.rpm
+  sudo dnf install -y ${lowedit}-i386.rpm
 
 elif [[ $method == "B" ]]; then
 

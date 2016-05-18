@@ -28,7 +28,7 @@ function vscode_install {
     mv "$SRC_DEST/visual-studio-code-oss.desktop" $SRC_DEST/VSCode-linux-${_vscode_arch}
     mv "$SRC_DEST/code.png" $SRC_DEST/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
     sed -i -e "s|<%-INST-%>|$HOME/.local/share/VSCode-OSS|g" \
-           -e "s|<%-DESC-%>|$DESC|g" visual-studio-code-oss.desktop
+           -e "s|<%-DESC-%>|$DESC|g" $SRC_DEST/VSCode-linux-${_vscode_arch}/visual-studio-code-oss.desktop
 
     if [[ `pwd` == "$GHUBM/VSCode-linux-${_vscode_arch}" ]]; then
       cd ..

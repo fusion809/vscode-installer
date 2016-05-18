@@ -1,12 +1,12 @@
 . ./lib/build/vscode.sh
 . ./lib/build/node.sh
 
-function centos-build {
+function centos_build {
   # Get dependencies
   curl -sL https://rpm.nodesource.com/setup_6.x | sudo bash -
   sudo yum install -y gcc gcc-c++ make glibc-devel \
     git-core libgnome-keyring-devel libX11-devel
-  sudo yum install -y nodejs-devel || node-build
+  sudo yum install -y nodejs-devel || node_build
 
   if ! `comex gulp`; then
     sudo npm install -g gulp
@@ -16,7 +16,7 @@ function centos-build {
     sudo npm install -g node-gyp
   fi
 
-  vscode-build
+  vscode_build
 }
 
-export -f centos-build
+export -f centos_build

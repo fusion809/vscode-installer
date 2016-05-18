@@ -1,5 +1,5 @@
 #!/bin/bash
-function src-method {
+function src_method {
 
   printf "How would you like to get the source code? [curl/git/wget/?; default: curl] "
   read SRC_METHOD
@@ -49,4 +49,4 @@ function src-method {
 
 }
 
-export -f src-method
+export -f src_method

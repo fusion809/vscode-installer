@@ -37,6 +37,6 @@ if [[ $method == "A" ]]; then
 
 elif [[ $method == "B" ]]; then
 
-  debian-build
+  debian_build
 
 fi

@@ -36,6 +36,6 @@ if [[ $method == "A" ]]; then
 
 elif [[ $method == "B" ]]; then
 
-  fedora-build
+  fedora_build
 
 fi

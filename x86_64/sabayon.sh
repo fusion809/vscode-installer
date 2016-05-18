@@ -54,6 +54,6 @@ if [[ $method == "A" ]]; then
 
 elif [[ $method == "B" ]]; then
 
-  sabayon-build
+  sabayon_build
 
 fi

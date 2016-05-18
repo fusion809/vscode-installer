@@ -36,6 +36,6 @@ if [[ $method == "A" ]]; then
 
 elif [[ $method == "B" ]]; then
 
-  mageia-build
+  mageia_build
 
 fi

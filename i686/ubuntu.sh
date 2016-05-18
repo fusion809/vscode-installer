@@ -37,6 +37,6 @@ if [[ $method == "A" ]]; then
 
 elif [[ $method == "B" ]]; then
 
-  ubuntu-build
+  ubuntu_build
 
 fi

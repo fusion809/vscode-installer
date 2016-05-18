@@ -1,13 +1,13 @@
 . ./lib/build/vscode.sh
 . ./lib/build/node.sh
 
-function fedora-build {
+function fedora_build {
   # Get dependencies
   sudo dnf update
   sudo dnf install -y make gcc gcc-c++ glibc-devel git-core libgnome-keyring-devel tar libX11-devel
   sudo dnf remove -y nodejs
 
-  node-build
+  node_build
 
   if ! `comex gulp`; then
     sudo npm install -g gulp
@@ -21,7 +21,7 @@ function fedora-build {
     sudo ln -s /usr/lib/node_modules/node-gyp /usr/bin/gyp
   fi
 
-  vscode-build
+  vscode_build
 }
 
-export -f fedora-build
+export -f fedora_build

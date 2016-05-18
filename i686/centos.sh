@@ -36,6 +36,6 @@ if [[ $method == "A" ]]; then
 
 elif [[ $method == "B" ]]; then
 
-  centos-build
+  centos_build
 
 fi

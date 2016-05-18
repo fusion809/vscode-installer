@@ -1,7 +1,7 @@
 #!/bin/bash
 . ./lib/build/vscode.sh
 
-function opensuse-build {
+function opensuse_build {
   # Get dependencies
   sudo zypper in -y nodejs nodejs-devel make gcc gcc-c++ glibc-devel \
     git-core libgnome-keyring-devel libX11-devel
@@ -14,7 +14,7 @@ function opensuse-build {
     sudo npm install -g node-gyp
   fi
 
-  vscode-build
+  vscode_build
 }
 
-export -f opensuse-build
+export -f opensuse_build

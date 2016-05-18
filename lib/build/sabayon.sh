@@ -1,7 +1,7 @@
 #!/bin/bash
 . ./lib/build/vscode.sh
 
-function sabayon-build {
+function sabayon_build {
   # Get dependencies
   sudo equo i net-libs/nodejs sys-devel/base-gcc sys-devel/gcc sys-libs/glibc \
     dev-vcs/git gnome-base/gnome-keyring gnome-base/libgnome-keyring x11-libs/libX11
@@ -14,7 +14,7 @@ function sabayon-build {
     sudo npm install -g node-gyp
   fi
 
-  vscode-build
+  vscode_build
 }
 
-export -f sabayon-build
+export -f sabayon_build

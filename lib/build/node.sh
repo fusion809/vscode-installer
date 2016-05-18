@@ -1,5 +1,5 @@
 #!/bin/bash
-function node-build {
+function node_build {
 
   # Architecture
   export ARCH=$(uname -m)
@@ -21,4 +21,4 @@ function node-build {
   fi
 }
 
-export -f node-build
+export -f node_build

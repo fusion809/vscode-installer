@@ -1,6 +1,6 @@
 . ./lib/build/vscode.sh
 
-function ubuntu-build {
+function ubuntu_build {
   # Get dependencies
   sudo apt-get install -y curl
   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -15,7 +15,7 @@ function ubuntu-build {
     sudo npm install -g node-gyp
   fi
 
-  vscode-build
+  vscode_build
 }
 
-export -f ubuntu-build
+export -f ubuntu_build

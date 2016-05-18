@@ -31,8 +31,8 @@ export VER=$(cat /etc/os-release | grep -w "VERSION_ID" | sed 's/VERSION_ID=//g'
 
 source "./lib/test.sh"                        # Load the test functions
 source "./lib/method.sh"                      # Load the method function
-source "./lib/src-method.sh"                  # Load the src-method function
-source "./lib/src-build.sh"                   # Load the src-build function
+source "./lib/src_method.sh"                  # Load the src_method function
+source "./lib/src_build.sh"                   # Load the src_build function
 source "./lib/arch.sh"                        # Load the arch function
 source "./lib/install.sh"                     # Load the install function
 source "./lib/dest.sh"                        # Load the dest function

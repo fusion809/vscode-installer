@@ -2,15 +2,7 @@
 function vscode_install {
   cp $INDIR/resources/{code.png,visual-studio-code-oss.desktop} $SRC_DEST
 
-  if [[ $DEST_TYPE == 'local' ]]; then
-
-    mv "$SRC_DEST/visual-studio-code-oss.desktop" .
-    mv "$SRC_DEST/code.png" $GHUBM/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
-    sed -i -e "s|<%-INST-%>|$GHUBM/VSCode-linux-${_vscode_arch}|g" \
-           -e "s|<%-DESC-%>|$DESC|g" visual-studio-code-oss.desktop
-    printf "VScode is now installed to $GHUBM/VSCode-linux-${_vscode_arch}"
-
-  else
+  if [[ $DEST_TYPE == 'system' ]]; then
 
     cd ..
 
@@ -32,6 +24,26 @@ function vscode_install {
            -e "s|<%-DESC-%>|$DESC|g" "$SRC_DEST/visual-studio-code-oss.desktop"
     sudo install -D -m644 "$SRC_DEST/visual-studio-code-oss.desktop" "/usr/share/applications/visual-studio-code-oss.desktop"
 
+  else
+    mv "$SRC_DEST/visual-studio-code-oss.desktop" .
+    mv "$SRC_DEST/code.png" $GHUBM/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
+    sed -i -e "s|<%-INST-%>|$HOME/.local/share/VSCode-OSS|g" \
+           -e "s|<%-DESC-%>|$DESC|g" visual-studio-code-oss.desktop
+
+    if [[ `pwd` == "$GHUBM/VSCode-linux-${_vscode_arch}" ]]; then
+      cd ..
+    fi
+
+    mv $GHUBM/VSCode-linux-${_vscode_arch} $GHUBM/VSCode-OSS
+
+    if [[ -d $HOME/.local/share/VSCode-OSS ]]; then
+      rm -rf $HOME/.local/share/VSCode-OSS
+    fi
+
+    mv $GHUBM/VSCode-OSS $HOME/.local/share/
+    install -Dm755 $HOME/.local/share/VSCode-OSS/visual-studio-code-oss.desktop $HOME/.local/share/applications/visual-studio-code-oss.desktop
+
+    printf "Installation complete! \nVSCode is now installed to $HOME/.local/share/VSCode-OSS"
   fi
 }
 

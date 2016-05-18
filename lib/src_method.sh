@@ -1,13 +1,13 @@
 #!/bin/bash
 function src_method {
 
-  printf "How would you like to get the source code? [curl/git/wget/?; default: curl] "
+  printf "How would you like to get the source code? \n[curl/git/wget/?; default: curl] "
   read SRC_METHOD
 
   if [[ $SRC_METHOD == "?" ]]; then
 
     printf "curl and wget are the fastest methods and they chew up less bandwidth.\n
-    While git uses up more bandwidth but it also makes upgrading the package faster."
+    While git uses up several fold more bandwidth but it also makes upgrading the package in the future easier and faster."
 
   elif [[ $SRC_METHOD == "wget" ]]; then
 

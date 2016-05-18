@@ -29,6 +29,10 @@ if [[ -d /usr/share/code/bin ]]; then
   fi
 fi
 
+if ! [[ -d /usr/share/code/bin ]] && ! [[ -d /opt/VSCode-linux-x64 ]] && ! [[ -d /opt/VSCode-OSS ]]; then
+  method
+fi
+
 if [[ $method == "A" ]]; then
 
   sudo equo i media-libs/fontconfig x11-libs/libXtst x11-libs/gtk+:2 dev-lang/python:2.7 x11-libs/cairo \

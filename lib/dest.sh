@@ -4,7 +4,7 @@ function dest {
   read SRC_DEST
 
   if ! [[ -n $SRC_DEST ]]; then
-    SRC_DEST=$GHUB
+    SRC_DEST=$GHUBM
   fi
 
   printf "Do you want to install Visual Studio Code locally or system-wide?\n[Available options: local/system. If you leave this field empty 'local' will be selected]\n"

@@ -30,10 +30,6 @@ function vscode_install {
     sed -i -e "s|<%-INST-%>|$HOME/.local/share/VSCode-OSS|g" \
            -e "s|<%-DESC-%>|$DESC|g" $SRC_DEST/VSCode-linux-${_vscode_arch}/visual-studio-code-oss.desktop
 
-    if [[ `pwd` == "$GHUBM/VSCode-linux-${_vscode_arch}" ]]; then
-      cd ..
-    fi
-
     mv $SRC_DEST/VSCode-linux-${_vscode_arch} $SRC_DEST/VSCode-OSS
 
     if [[ -d $HOME/.local/share/VSCode-OSS ]]; then

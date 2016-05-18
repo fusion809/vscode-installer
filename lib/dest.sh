@@ -1,6 +1,6 @@
 #!/bin/bash
 function dest {
-  printf "Where do you want to store the source code? [Leave empty for $GHUB]\n"
+  printf "Where do you want to store the source code? [Leave empty for $GHUBM]\n"
   read SRC_DEST
 
   if ! [[ -n $SRC_DEST ]]; then

@@ -1,5 +1,5 @@
 #!/bin/bash
-function vscode-install {
+function vscode_install {
   cp $INDIR/resources/{code.png,visual-studio-code-oss.desktop} $SRC_DEST
 
   if [[ $DEST_TYPE == 'local' ]]; then
@@ -35,4 +35,4 @@ function vscode-install {
   fi
 }
 
-export -f vscode-install
+export -f vscode_install

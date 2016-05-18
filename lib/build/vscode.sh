@@ -14,7 +14,7 @@ function vscode_build {
   ########### The build #############
   src_build
 
-  vscode-install
+  vscode_install
 }
 
 export -f vscode_build

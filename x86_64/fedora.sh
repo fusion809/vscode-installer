@@ -29,6 +29,10 @@ if [[ -d /usr/share/code/bin ]]; then
   fi
 fi
 
+if ! [[ -d /usr/share/code/bin ]] && ! [[ -d /opt/VSCode-linux-x64 ]] && ! [[ -d /opt/VSCode-OSS ]]; then
+  method
+fi
+
 if [[ $method == "A" ]]; then
 
   curl -sL "https://go.microsoft.com/fwlink/?LinkID=760667" > vscode-x86_64.rpm

@@ -25,8 +25,8 @@ function vscode_install {
     sudo install -D -m644 "$SRC_DEST/visual-studio-code-oss.desktop" "/usr/share/applications/visual-studio-code-oss.desktop"
 
   else
-    mv "$SRC_DEST/visual-studio-code-oss.desktop" $GHUBM/VSCode-linux-${_vscode_arch}
-    mv "$SRC_DEST/code.png" $GHUBM/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
+    mv "$SRC_DEST/visual-studio-code-oss.desktop" $SRC_DEST/VSCode-linux-${_vscode_arch}
+    mv "$SRC_DEST/code.png" $SRC_DEST/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
     sed -i -e "s|<%-INST-%>|$HOME/.local/share/VSCode-OSS|g" \
            -e "s|<%-DESC-%>|$DESC|g" visual-studio-code-oss.desktop
 
@@ -34,13 +34,13 @@ function vscode_install {
       cd ..
     fi
 
-    mv $GHUBM/VSCode-linux-${_vscode_arch} $GHUBM/VSCode-OSS
+    mv $SRC_DEST/VSCode-linux-${_vscode_arch} $SRC_DEST/VSCode-OSS
 
     if [[ -d $HOME/.local/share/VSCode-OSS ]]; then
       rm -rf $HOME/.local/share/VSCode-OSS
     fi
 
-    mv $GHUBM/VSCode-OSS $HOME/.local/share/
+    mv $SRC_DEST/VSCode-OSS $HOME/.local/share/
     install -Dm755 $HOME/.local/share/VSCode-OSS/visual-studio-code-oss.desktop $HOME/.local/share/applications/visual-studio-code-oss.desktop
 
     printf "Installation complete! \nVSCode is now installed to $HOME/.local/share/VSCode-OSS"

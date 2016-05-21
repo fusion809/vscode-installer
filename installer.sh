@@ -57,6 +57,8 @@ elif [[ $LD == "Sabayon"* ]]; then
   source "lib/build/sabayon.sh"
 elif [[ $LD == "Ubuntu"* ]] || [[ $LD == "Zorin OS" ]]; then
   source "lib/build/ubuntu.sh"
+else
+  source "lib/other.sh"
 fi
 
 # List of supported distributions

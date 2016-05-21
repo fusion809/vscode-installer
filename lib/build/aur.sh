@@ -1,7 +1,5 @@
 #!/bin/bash
 
-. ./lib/test.sh
-
 function vsin {
   if [[ -n "$1" ]]; then
     cd /tmp/PKGBUILDs/visual-studio-code-$1

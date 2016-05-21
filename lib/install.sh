@@ -37,6 +37,10 @@ function vscode_install {
       rm -rf $HOME/.local/share/VSCode-OSS
     fi
 
+    if ! [[ -d $HOME/.local/bin ]]; then
+      mkdir -p $HOME/.local/bin
+    fi
+
     mv $SRC_DEST/VSCode-OSS $HOME/.local/share/
     ln -sf $HOME/.local/share/VSCode-OSS/code-oss $HOME/.local/bin/visual-studio-code-oss
     install -Dm755 $HOME/.local/share/VSCode-OSS/visual-studio-code-oss.desktop $HOME/.local/share/applications/visual-studio-code-oss.desktop

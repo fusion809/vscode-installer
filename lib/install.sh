@@ -37,6 +37,10 @@ function vscode_install {
       rm -rf $HOME/.local/share/VSCode-OSS
     fi
 
+    if ! [[ -d $HOME/.local/share ]]; then
+      mkdir -p $HOME/.local/share
+    fi
+
     if ! [[ -d $HOME/.local/bin ]]; then
       mkdir -p $HOME/.local/bin
     fi

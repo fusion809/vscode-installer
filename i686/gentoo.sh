@@ -38,7 +38,7 @@ fi
 
 if [[ $method == "A" ]]; then
 
-  sudo emerge media-libs/fontconfig x11-libs/libXtst x11-libs/gtk+:2 dev-lang/python:2.7 x11-libs/cairo \
+  sudo emerge -av media-libs/fontconfig x11-libs/libXtst x11-libs/gtk+:2 dev-lang/python:2.7 x11-libs/cairo \
     media-libs/alsa-lib gnome-base/gconf dev-libs/nss sys-devel/gcc
 
   # Get binary and extract

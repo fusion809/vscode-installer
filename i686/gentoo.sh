@@ -12,8 +12,8 @@ if [[ -d /opt/VSCode-OSS/ ]]; then
   fi
 fi
 
-if [[ -d /opt/VSCode-linux-x64 ]]; then
-  vsiver=$(/opt/VSCode-linux-x64/bin/code-oss --version)
+if [[ -d /opt/VSCode-linux-x86 ]]; then
+  vsiver=$(/opt/VSCode-linux-x86/bin/code-oss --version)
   version
   if [[ $vsiver == $pkgver ]]; then
     printf "The latest version of Visual Studio Code is already installed!"
@@ -32,7 +32,7 @@ if [[ -d /usr/share/code/bin ]]; then
   fi
 fi
 
-if ! [[ -d /usr/share/code/bin ]] && ! [[ -d /opt/VSCode-linux-x64 ]] && ! [[ -d /opt/VSCode-OSS ]]; then
+if ! [[ -d /usr/share/code/bin ]] && ! [[ -d /opt/VSCode-linux-x86 ]] && ! [[ -d /opt/VSCode-OSS ]]; then
   method
 fi
 

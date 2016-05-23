@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "./lib/build/sabayon.sh"
+source "./lib/build/gentoo.sh"
 
 if [[ -d /opt/VSCode-OSS/ ]]; then
   vsiver=$(/opt/VSCode-OSS/bin/code-oss --version)
@@ -38,12 +38,12 @@ fi
 
 if [[ $method == "A" ]]; then
 
-  sudo equo i media-libs/fontconfig x11-libs/libXtst x11-libs/gtk+:2 dev-lang/python:2.7 x11-libs/cairo \
+  sudo emerge media-libs/fontconfig x11-libs/libXtst x11-libs/gtk+:2 dev-lang/python:2.7 x11-libs/cairo \
     media-libs/alsa-lib gnome-base/gconf dev-libs/nss sys-devel/gcc
 
   # Get binary and extract
-  _pkg=VSCode-linux-x64
-  curl -sL "https://go.microsoft.com/fwlink/?LinkID=620884" > /tmp/$_pkg-stable.zip
+  _pkg=VSCode-linux-x86
+  curl -sL "https://go.microsoft.com/fwlink/?LinkID=620885" > /tmp/$_pkg-stable.zip
   cd /tmp
   bsdtar -xf $_pkg-stable.zip
   rm $_pkg-stable.zip
@@ -61,6 +61,6 @@ if [[ $method == "A" ]]; then
 
 elif [[ $method == "B" ]]; then
 
-  sabayon_build
+  gentoo_build
 
 fi

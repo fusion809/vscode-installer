@@ -14,7 +14,11 @@ fi
 
 # Distribution name. Previously lsb_release was used, but it failed on Docker containers so this
 # substitute was made.
-export LD=$(cat /etc/os-release | grep -w "NAME" | sed 's/NAME=//g' | sed 's/"//g')
+if [[ -f /etc/os-release ]]; then
+  export LD=$(cat /etc/os-release | grep -w "NAME" | sed 's/NAME=//g' | sed 's/"//g')
+elif [[ -f /etc/pclinuxos-release ]]; then
+  export LD=$(cat /etc/pclinuxos-release | grep -w "NAME" | sed 's/NAME=//g' | sed 's/"//g')
+fi
 # Distribution architecture
 export ARCH=$(uname -m | sed 's/i[0-9]/i6/g')
 # Installer directory
@@ -47,6 +51,8 @@ elif [[ $LD == "Debian"* ]] || [[ $LD == "Deepin"* ]]; then
   source "lib/build/debian.sh"
 elif [[ $LD == "Fedora"* ]]; then
   source "lib/build/fedora.sh"
+elif [[ $LD == "Gentoo"* ]]; then
+  source "lib/build/gentoo.sh"
 elif [[ $LD == "Mageia"* ]]; then
   source "lib/build/mageia.sh"
 elif [[ $LD == "openSUSE"* ]]; then
@@ -68,6 +74,7 @@ DISTROS=(
 'Debian'                                    #  Debian
 'Deepin'                                    #  Deepin
 'Fedora'                                    #  Fedora
+'Gentoo'                                    #  Gentoo
 'Mageia'                                    #  Mageia
 'Manjaro'                                   #  Manjaro Linux
 'openSUSE'                                  #  openSUSE

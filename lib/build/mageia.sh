@@ -4,7 +4,7 @@
 
 function mageia_build {
   # Get dependencies
-  sudo urpmi git curl libgnome-keyring-devel make gcc gcc-c++ libx11-devel python fakeroot createrepo rpmbuild
+  sudo urpmi git curl libgnome-keyring-devel make gcc gcc-c++ libx11-devel python fakeroot createrepo rpmdevtools
   node_build
 
   if ! `comex gulp`; then

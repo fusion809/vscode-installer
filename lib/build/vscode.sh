@@ -17,12 +17,22 @@ function vscode_build {
   src_build
 
   if `comex dpkg`; then
-    cd $SRC_DEST/${lowedit}-${pkgver}/.build/linux/deb/amd64/deb/
-    sudo dpkg -i vscode-amd64.deb
+    if [[ $_vscode_arch == "x64" ]]; then
+      cd $SRC_DEST/${lowedit}-${pkgver}/.build/linux/deb/amd64/deb/
+      sudo dpkg -i vscode-amd64.deb
+    else
+      cd $SRC_DEST/${lowedit}-${pkgver}/.build/linux/deb/i386/deb/
+      sudo dpkg -i vscode-i386.deb
+    fi
     sudo apt-get -f install
   elif `comex yum`; then
-    cd ..
-    sudo yum install -y vscode*.rpm
+    if [[ $_vscode_arch == "x64" ]]; then
+      cd $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/amd64/rpm/
+      sudo yum install -y vscode.x86_64.rpm
+    else
+      cd $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/i386/rpm/
+      sudo yum install -y vscode.x86.rpm
+    fi
   elif `comex dnf`; then
     cd ..
     sudo dnf install -y vscode*.rpm

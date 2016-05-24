@@ -1,7 +1,7 @@
 #!/bin/bash
 function src_method {
 
-  printf "How would you like to get the source code? \n[curl/git/wget/?; default: curl] "
+  printf "How would you like to get the source code? \n[curl/git/wget/?; default: curl] \n"
   read SRC_METHOD
 
   if [[ $SRC_METHOD == "?" ]]; then

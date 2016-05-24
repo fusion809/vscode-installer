@@ -25,6 +25,12 @@ function vscode_build {
       sudo dpkg -i vscode-i386.deb
     fi
     sudo apt-get -f install
+  elif `comex dnf`; then
+    if [[ $_vscode_arch == "x64" ]]; then
+      sudo dnf install -y $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/amd64/rpm/vscode-x86_64.rpm
+    else
+      sudo dnf install -y $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/i386/rpm/vscode-i386.rpm
+    fi
   elif `comex yum`; then
     if [[ $_vscode_arch == "x64" ]]; then
       cd $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/amd64/rpm/
@@ -33,15 +39,18 @@ function vscode_build {
       cd $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/i386/rpm/
       sudo yum install -y vscode-i386.rpm
     fi
-  elif `comex dnf`; then
-    cd ..
-    sudo dnf install -y vscode*.rpm
   elif `comex zypper`; then
-    cd ..
-    sudo zypper in -y vscode*.rpm
+    if [[ $_vscode_arch == "x64" ]]; then
+      sudo zypper in -y $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/amd64/rpm/vscode-x86_64.rpm
+    else
+      sudo zypper in -y $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/i386/rpm/vscode-i386.rpm
+    fi
   elif `comex urpmi`; then
-    cd ..
-    sudo urpmi vscode*.rpm
+    if [[ $_vscode_arch == "x64" ]]; then
+      sudo urpmi $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/amd64/rpm/vscode-x86_64.rpm
+    else
+      sudo urpmi $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/i386/rpm/vscode-i386.rpm
+    fi
   else
     vscode_install
   fi

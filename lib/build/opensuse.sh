@@ -6,12 +6,13 @@ function opensuse_build {
   sudo zypper in -y nodejs nodejs-devel make gcc gcc-c++ glibc-devel \
     git-core libgnome-keyring-devel libX11-devel python createrepo rpm-build
 
-  if [[ $LD == "openSUSE Leap" ]]; then
+  PRETD=$(cat /etc/os-release | grep -w "PRETTY_NAME" | sed 's/PRETTY_NAME=//g' | sed 's/"//g')
+  if [[ $PRETD == "openSUSE Leap"* ]]; then
     sudo zypper addrepo http://download.opensuse.org/repositories/devel:tools/openSUSE_Leap_42.1/devel:tools.repo
-  elif [[ $LD == "openSUSE Tumbleweed" ]]; then
+  elif [[ $PRETD == "openSUSE Tumbleweed"* ]]; then
     sudo zypper addrepo http://download.opensuse.org/repositories/devel:tools/openSUSE_Tumbleweed/devel:tools.repo
   fi
-  
+
   sudo zypper refresh
   sudo zypper in -y fakeroot
 

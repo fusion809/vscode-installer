@@ -17,8 +17,9 @@ function vscode_build {
   src_build
 
   if `comex dpkg`; then
-    cd ..
-    sudo dpkg -i vscode*.deb
+    cd $SRC_DEST/${lowedit}-${pkgver}/.build/linux/deb/amd64/deb/
+    sudo dpkg -i vscode-amd64.deb
+    sudo apt-get -f install
   elif `comex yum`; then
     cd ..
     sudo yum install -y vscode*.rpm
@@ -28,6 +29,9 @@ function vscode_build {
   elif `comex zypper`; then
     cd ..
     sudo zypper in -y vscode*.rpm
+  elif `comex urpmi`; then
+    cd ..
+    sudo urpmi vscode*.rpm
   else
     vscode_install
   fi

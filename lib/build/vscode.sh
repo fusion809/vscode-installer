@@ -11,6 +11,8 @@ function vscode_build {
   # Get the architecture details and use them appropriately
   arch
 
+  src_prepare
+
   ########### The build #############
   src_build
 

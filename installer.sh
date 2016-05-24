@@ -37,6 +37,7 @@ source "./lib/arch.sh"                        # Load the arch function
 source "./lib/dest.sh"                        # Load the dest function
 source "./lib/install.sh"                     # Load the install function
 source "./lib/method.sh"                      # Load the method function
+source "./lib/src_prepare.sh"                 # Load the prepare function
 source "./lib/src_build.sh"                   # Load the src_build function
 source "./lib/src_method.sh"                  # Load the src_method function
 source "./lib/test.sh"                        # Load the test functions

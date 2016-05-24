@@ -16,7 +16,21 @@ function vscode_build {
   ########### The build #############
   src_build
 
-  vscode_install
+  if `comex dpkg`; then
+    cd ..
+    sudo dpkg -i vscode*.deb
+  elif `comex yum`; then
+    cd ..
+    sudo yum install -y vscode*.rpm
+  elif `comex dnf`; then
+    cd ..
+    sudo dnf install -y vscode*.rpm
+  elif `comex zypper`; then
+    cd ..
+    sudo zypper in -y vscode*.rpm
+  else
+    vscode_install
+  fi
 }
 
 export -f vscode_build

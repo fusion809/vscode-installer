@@ -4,7 +4,7 @@
 function fedora_build {
   # Get dependencies
   sudo dnf update
-  sudo dnf install -y make gcc gcc-c++ glibc-devel git-core libgnome-keyring-devel tar libX11-devel python
+  sudo dnf install -y make gcc gcc-c++ glibc-devel git-core libgnome-keyring-devel tar libX11-devel python customrepo
   sudo dnf remove -y nodejs
 
   node_build
@@ -18,7 +18,7 @@ function fedora_build {
   fi
 
   if ! [[ -f /usr/bin/gyp ]]; then
-    sudo ln -s /usr/lib/node_modules/node-gyp /usr/bin/gyp
+    sudo ln -sf /usr/lib/node_modules/node-gyp /usr/bin/gyp
   fi
 
   vscode_build

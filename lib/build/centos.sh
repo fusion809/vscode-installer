@@ -17,7 +17,7 @@ function centos_build {
   fi
 
   if ! [[ -f /usr/bin/gyp ]]; then
-    sudo ln -sf /usr/lib/node_modules/node-gyp /usr/bin/gyp
+    sudo ln -sf /usr/lib/node_modules/node-gyp/node-gyp /usr/bin/gyp
   fi
 
   vscode_build

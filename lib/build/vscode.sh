@@ -28,7 +28,7 @@ function vscode_build {
   elif `comex yum`; then
     if [[ $_vscode_arch == "x64" ]]; then
       cd $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/amd64/rpm/
-      sudo yum install -y vscode-amd64.rpm
+      sudo yum install -y vscode-x86_64.rpm
     else
       cd $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/i386/rpm/
       sudo yum install -y vscode-i386.rpm

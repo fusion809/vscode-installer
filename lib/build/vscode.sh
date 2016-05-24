@@ -45,7 +45,7 @@ function vscode_build {
     else
       sudo zypper in -y $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/i386/rpm/vscode-i386.rpm
     fi
-  elif `comex urpmi`; then
+  elif [[ -f /usr/bin/urpmi ]]; then
     if [[ $_vscode_arch == "x64" ]]; then
       sudo urpmi $SRC_DEST/${lowedit}-${pkgver}/.build/linux/rpm/amd64/rpm/vscode-x86_64.rpm
     else

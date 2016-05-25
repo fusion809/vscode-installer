@@ -16,6 +16,7 @@ This repository contains shell scripts that are to be used installing [Visual St
 * [Mageia](http://www.mageia.org/en/)
 * [Manjaro Linux](https://manjaro.github.io/)
 * [openSUSE](https://www.opensuse.org/)
+* [PCLinuxOS](http://www.pclinuxos.com/)
 * [Sabayon Linux](http://www.sabayon.org/)
 * [Ubuntu](http://www.ubuntu.com/) (and many of its derivatives such as [Linux Mint](https://linuxmint.com/))
 * [Zorin OS](http://zorinos.com/)

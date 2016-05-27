@@ -22,7 +22,7 @@ function vscode_install {
     # Modify desktop configuration file
     sed -i -e "s|<%-INST-%>|/opt/VSCode-OSS|g" \
            -e "s|<%-DESC-%>|$DESC|g" "$SRC_DEST/visual-studio-code-oss.desktop"
-    sudo install -D -m644 "$SRC_DEST/visual-studio-code-oss.desktop" "/usr/share/applications/visual-studio-code-oss.desktop"
+    sudo install -D -m644 "$SRC_DEST/visual-studio-code-oss.desktop" "/usr/share/applications/code-oss.desktop"
 
   else
 

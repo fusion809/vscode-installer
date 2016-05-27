@@ -19,9 +19,7 @@ function src_method {
 
     cd $SRC_DEST/${lowedit}-$pkgver
 
-    curl -sL https://git.io/vrYIY > product.json
-    curl -sL https://git.io/vrubJ > extensions/ini/package.json
-    curl -sL https://git.io/vrubs > extensions/shellscript/package.json
+    wget -cqO- https://git.io/vrYIY > product.json
 
   elif [[ $SRC_METHOD == "git" ]]; then
 
@@ -34,8 +32,6 @@ function src_method {
 
     # Use a custom product.json; necessary for extensions
     curl -sL https://git.io/vrYIY > product.json
-    curl -sL https://git.io/vrubJ > extensions/ini/package.json
-    curl -sL https://git.io/vrubs > extensions/shellscript/package.json
 
   else
 
@@ -48,8 +44,6 @@ function src_method {
     cd $SRC_DEST/${lowedit}-$pkgver
 
     curl -sL https://git.io/vrYIY > product.json
-    curl -sL https://git.io/vrubJ > extensions/ini/package.json
-    curl -sL https://git.io/vrubs > extensions/shellscript/package.json
 
   fi
 

@@ -12,12 +12,28 @@ function vscode_install {
       sudo rm -rf /opt/VSCode-OSS
     fi
 
+    if [[ -f /usr/share/applications/visual-studio-code-oss.desktop ]]; then
+      sudo rm /usr/share/applications/visual-studio-code-oss.desktop
+    fi
+
+    if [[ -f /usr/share/applications/code-oss.desktop ]]; then
+      sudo rm /usr/share/applications/code-oss.desktop
+    fi
+
+    if [[ -f /usr/bin/visual-studio-code-oss ]]; then
+      sudo rm /usr/bin/visual-studio-code-oss
+    fi
+
+    if [[ -f /usr/bin/code-oss ]]; then
+      sudo rm /usr/bin/code-oss
+    fi
+
     mv "$SRC_DEST/code.png" $SRC_DEST/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
 
     mv VSCode-linux-${_vscode_arch} VSCode-OSS
     sudo mv VSCode-OSS /opt
 
-    sudo ln -sf "/opt/VSCode-OSS/code-oss" "/usr/bin/visual-studio-code-oss"
+    sudo ln -sf "/opt/VSCode-OSS/code-oss" "/usr/bin/code-oss"
 
     # Modify desktop configuration file
     sed -i -e "s|<%-INST-%>|/opt/VSCode-OSS|g" \
@@ -37,6 +53,20 @@ function vscode_install {
       rm -rf $HOME/.local/share/VSCode-OSS
     fi
 
+    if [[ -f $HOME/.local/share/applications/visual-studio-code-oss.desktop ]]; then
+      rm -rf $HOME/.local/share/applications/visual-studio-code-oss.desktop
+    fi
+
+    if [[ -f $HOME/.local/share/applications/code-oss.desktop ]]; then
+      rm -rf $HOME/.local/share/applications/code-oss.desktop
+    fi
+    if [[ -f $HOME/.local/bin/visual-studio-code-oss ]]; then
+      rm -rf $HOME/.local/bin/visual-studio-code-oss
+    fi
+    if [[ -f $HOME/.local/bin/code-oss ]]; then
+      rm -rf $HOME/.local/bin/code-oss
+    fi
+
     if ! [[ -d $HOME/.local/share ]]; then
       mkdir -p $HOME/.local/share
     fi
@@ -46,8 +76,8 @@ function vscode_install {
     fi
 
     mv $SRC_DEST/VSCode-OSS $HOME/.local/share/
-    ln -sf $HOME/.local/share/VSCode-OSS/code-oss $HOME/.local/bin/visual-studio-code-oss
-    install -Dm755 $HOME/.local/share/VSCode-OSS/visual-studio-code-oss.desktop $HOME/.local/share/applications/visual-studio-code-oss.desktop
+    ln -sf $HOME/.local/share/VSCode-OSS/code-oss $HOME/.local/bin/code-oss
+    install -Dm755 $HOME/.local/share/VSCode-OSS/visual-studio-code-oss.desktop $HOME/.local/share/applications/code-oss.desktop
 
     printf "Installation complete! \nVSCode is now installed to $HOME/.local/share/VSCode-OSS\n"
   fi

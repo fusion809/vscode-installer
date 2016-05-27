@@ -54,10 +54,10 @@ if [[ $method == "A" ]]; then
   sed -e "s|<%-INST-%>|/opt/VSCode|g" $INDIR/resources/visual-studio-code.desktop > $INDIR/resources/visual-studio-code2.desktop
 
   sudo install -m644 "/tmp/${_pkg}/resources/app/LICENSE.txt" "/usr/share/licenses/visual-studio-code/LICENSE"
-  sudo install -m644 "$INDIR/resources/visual-studio-code2.desktop" "/usr/share/applications/visual-studio-code.desktop"
+  sudo install -m644 "$INDIR/resources/visual-studio-code2.desktop" "/usr/share/applications/code.desktop"
 
   sudo cp -r "/tmp/${_pkg}/"* "/opt/VSCode" -R
-  sudo ln -s /opt/VSCode/code /usr/bin/visual-studio-code
+  sudo ln -s /opt/VSCode/code /usr/bin/code
 
 elif [[ $method == "B" ]]; then
 

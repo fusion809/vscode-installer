@@ -20,8 +20,8 @@ function vscode_install {
       sudo rm /usr/share/applications/code-oss.desktop
     fi
 
-    if [[ -f /usr/bin/visual-studio-code-oss ]]; then
-      sudo rm /usr/bin/visual-studio-code-oss
+    if [[ -f /usr/bin/code-oss ]]; then
+      sudo rm /usr/bin/code-oss
     fi
 
     if [[ -f /usr/bin/code-oss ]]; then

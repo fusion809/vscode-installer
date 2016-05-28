@@ -10,9 +10,9 @@ function src_prepare {
     fi
   else
     if [[ $method == "A" ]]; then
-      export INST_DEST=/opt/VSCode
+      export INST_DEST=/usr/share/code
     else
-      export INST_DEST=/opt/VSCode-OSS
+      export INST_DEST=/usr/share/code-oss
     fi
   fi
 

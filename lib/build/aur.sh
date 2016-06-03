@@ -2,7 +2,7 @@
 
 function vsin {
   if [[ -n "$1" ]]; then
-    cd /tmp/PKGBUILDs/visual-studio-code-$1
+    cd /tmp/visual-studio-code-oss/visual-studio-code-$1
   else
     cd /tmp/visual-studio-code
   fi
@@ -18,29 +18,29 @@ function vsaur {
   # Export env variables
   export AUR=https://aur.archlinux.org/cgit/aur.git/snapshot/
   export GIT=https://aur.archlinux.org/
-  export PKG=https://github.com/fusion809/PKGBUILDs
+  export PKG=https://github.com/fusion809/visual-studio-code-oss
 
   if [[ -n "$1" ]]; then                     # if input provided; allowed input bin, git
 
     if comex git; then                      # Install with git and makepkg otherwise
 
-      git clone $PKG /tmp/PKGBUILDs
+      git clone $PKG /tmp/visual-studio-code-oss
       vsin $1
 
     elif comex curl; then                     # Install with curl and makepkg otherwise
 
-      curl -sL $PKG/archive/master.tar.gz | tar xz --transform=s/PKGBUILDs-master/PKGBUILDs/ -C /tmp
+      curl -sL $PKG/archive/master.tar.gz | tar xz --transform=s/visual-studio-code-oss-master/visual-studio-code-oss/ -C /tmp
       vsin $1
 
     elif comex wget; then                     # Install with wget and makepkg otherwise
 
-      wget -cqO- $PKG/archive/master.tar.gz | tar xz --transform=s/PKGBUILDs-master/PKGBUILDs/ -C /tmp
+      wget -cqO- $PKG/archive/master.tar.gz | tar xz --transform=s/visual-studio-code-oss-master/visual-studio-code-oss/ -C /tmp
       vsin $1
 
     else                                      # Install curl and install with curl and makepkg otherwise
 
       sudo pacman -S curl --noconfirm
-      curl -sL $PKG/archive/master.tar.gz | tar xz --transform=s/PKGBUILDs-master/PKGBUILDs/ -C /tmp
+      curl -sL $PKG/archive/master.tar.gz | tar xz --transform=s/visual-studio-code-oss-master/visual-studio-code-oss/ -C /tmp
       vsin $1
 
     fi

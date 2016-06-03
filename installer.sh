@@ -14,13 +14,19 @@ fi
 
 # Distribution name. Previously lsb_release was used, but it failed on Docker containers so this
 # substitute was made.
+
 if [[ -f /etc/os-release ]]; then
+
   export LD=$(cat /etc/os-release | grep -w "NAME" | sed 's/NAME=//g' | sed 's/"//g')
+
 elif [[ -f /etc/pclinuxos-release ]]; then
+
   export LD=$(cat /etc/pclinuxos-release | grep -w "NAME" | sed 's/NAME=//g' | sed 's/"//g')
+  
 fi
 # Distribution architecture
 export ARCH=$(uname -m | sed 's/i[0-9]/i6/g')
+
 # Installer directory
 export RELDIR=$(dirname "$0" | sed 's|.||g')
 if [[ -n $RELDIR ]]; then

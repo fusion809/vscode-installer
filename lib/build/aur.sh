@@ -11,7 +11,6 @@ function vsin {
 }
 
 export -f vsin
-
 # Install visual-studio-code
 function vsaur {
 

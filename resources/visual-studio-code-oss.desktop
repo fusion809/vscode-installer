@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Visual Studio Code (OSS)
-Description=<%-DESC-%>
+Comment=<%-DESC-%>
 Version=1.0
 Exec="<%=INST=%>/code-oss" %F
 Icon=<%=INST=%>/resources/app/resources/linux/code.png

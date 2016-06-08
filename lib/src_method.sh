@@ -19,7 +19,7 @@ function src_method {
 
     cd $SRC_DEST/${lowedit}-$pkgver
 
-    wget -cqO- https://git.io/vrYIY > product.json
+    wget -cqO- https://git.io/voqu3 > product.json
 
   elif [[ $SRC_METHOD == "git" ]]; then
 
@@ -31,7 +31,7 @@ function src_method {
     git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
 
     # Use a custom product.json; necessary for extensions
-    curl -sL https://git.io/vrYIY > product.json
+    curl -sL https://git.io/voqu3 > product.json
 
   else
 
@@ -43,7 +43,7 @@ function src_method {
 
     cd $SRC_DEST/${lowedit}-$pkgver
 
-    curl -sL https://git.io/vrYIY > product.json
+    curl -sL https://git.io/voqu3 > product.json
 
   fi
 

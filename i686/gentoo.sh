@@ -51,7 +51,7 @@ if [[ $method == "A" ]]; then
   sudo install -d "/usr/share/licenses/visual-studio-code"
   sudo install -d "/opt/VSCode"
 
-  sed -e "s|<%-INST-%>|/opt/VSCode|g" $INDIR/resources/visual-studio-code.desktop > $INDIR/resources/visual-studio-code2.desktop
+  cat $INDIR/resources/visual-studio-code.desktop | sed -e "s|<%-INST-%>|/opt/VSCode|g"  > $INDIR/resources/visual-studio-code2.desktop
 
   sudo install -m644 "/tmp/${_pkg}/resources/app/LICENSE.txt" "/usr/share/licenses/visual-studio-code/LICENSE"
   sudo install -m644 "$INDIR/resources/visual-studio-code2.desktop" "/usr/share/applications/code.desktop"

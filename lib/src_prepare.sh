@@ -16,6 +16,7 @@ function src_prepare {
     fi
   fi
 
+  printf "Sedding in src_prepare.sh\n"
   sed -i -e "s|<%-DESC-%>|$DESC|g" \
          -e "s|<%=INST=%>|$INST_DEST|g" "$SRC_DEST/${lowedit}-$pkgver/resources/linux/code.desktop"
 }

@@ -10,7 +10,7 @@ function dest {
     fi
   fi
 
-  printf "Do you want to install Visual Studio Code locally or system-wide?\n[Available options: local/system. If you leave this field empty 'local' will be selected]\n"
+  printf "Do you want to install Visual Studio Code locally or system-wide?\n[Available options: local/system. If you leave this field empty 'system' will be selected]\n"
   read DEST_TYPE
 
   export SRC_DEST

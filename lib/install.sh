@@ -2,7 +2,7 @@
 function vscode_install {
   cp $INDIR/resources/{code.png,visual-studio-code-oss.desktop} $SRC_DEST
 
-  if [[ $DEST_TYPE == 'system' ]]; then
+  if ! [[ $DEST_TYPE == 'local' ]]; then
 
     cd ..
 

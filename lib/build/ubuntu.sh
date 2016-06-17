@@ -15,13 +15,7 @@ function ubuntu_build {
     fi
   fi
 
-  if ! `comex gulp`; then
-    sudo npm install -g gulp
-  fi
-
-  if ! `comex node-gyp`; then
-    sudo npm install -g node-gyp
-  fi
+  sudo npm install -g gulp node-gyp
 
   vscode_build
 }

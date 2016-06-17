@@ -8,13 +8,7 @@ function centos_build {
     libgnome-keyring-devel libX11-devel createrepo rpmdevtools fakeroot
   sudo yum install -y nodejs-devel || node_build
 
-  if ! `comex gulp`; then
-    sudo npm install -g gulp
-  fi
-
-  if ! `comex node-gyp`; then
-    sudo npm install -g node-gyp
-  fi
+  sudo npm install -g gulp node-gyp
 
   if ! [[ -f /usr/bin/gyp ]]; then
     sudo ln -sf /usr/lib/node_modules/node-gyp/node-gyp /usr/bin/gyp

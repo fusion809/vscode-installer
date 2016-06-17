@@ -7,13 +7,7 @@ function debian_build {
   sudo apt-get install -y nodejs build-essential git \
     libgnome-keyring-dev fakeroot libx11-dev python
 
-  if ! `comex gulp`; then
-    sudo npm install -g gulp
-  fi
-
-  if ! `comex node-gyp`; then
-    sudo npm install -g node-gyp
-  fi
+  sudo npm install -g gulp node-gyp
 
   vscode_build
 }

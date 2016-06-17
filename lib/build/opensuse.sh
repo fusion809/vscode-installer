@@ -16,13 +16,7 @@ function opensuse_build {
   sudo zypper refresh
   sudo zypper in -y fakeroot
 
-  if ! `comex gulp`; then
-    sudo npm install -g gulp
-  fi
-
-  if ! `comex node-gyp`; then
-    sudo npm install -g node-gyp
-  fi
+  sudo npm install -g gulp node-gyp
 
   if ! [[ -f /usr/bin/gyp ]]; then
     sudo ln -sf /usr/lib/node_modules/node-gyp/node-gyp /usr/bin/gyp

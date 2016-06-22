@@ -5,7 +5,7 @@ function centos_build {
   # Get dependencies
   curl -sL https://rpm.nodesource.com/setup_6.x | sudo bash -
   sudo yum install -y gcc gcc-c++ make glibc-devel git-core python \
-    libgnome-keyring-devel libX11-devel createrepo rpmdevtools fakeroot
+    libgnome-keyring-devel libX11-devel createrepo rpmdevtools
   sudo yum install -y nodejs-devel || node_build
 
   sudo npm install -g gulp node-gyp

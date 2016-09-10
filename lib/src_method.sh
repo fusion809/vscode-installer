@@ -19,7 +19,7 @@ function src_method {
 
     cd $SRC_DEST/${lowedit}-$pkgver
 
-    wget -cqO- https://git.io/voqu3 > product.json
+    curl -sL https://github.com/fusion809/vscode-installer/raw/master/resources/product.json > product.json
 
   elif [[ $SRC_METHOD == "git" ]]; then
 
@@ -43,7 +43,7 @@ function src_method {
 
     cd $SRC_DEST/${lowedit}-$pkgver
 
-    curl -sL https://git.io/voqu3 > product.json
+    curl -sL https://github.com/fusion809/vscode-installer/raw/master/resources/product.json > product.json
 
   fi
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 function version {
-  export pkgver=66f37fd2a99eb9d628dd374d81d78835b410c39b
+  export pkgver=1.5.3
 }
 
 export -f version

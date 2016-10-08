@@ -29,6 +29,8 @@ function vscode_install {
     fi
 
     mv "$SRC_DEST/code.png" $SRC_DEST/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
+    cd $SRC_DEST/VSCode-linux-${_vscode_arch}/resources/app/resources/linux/
+    ln -s code.png visual-studio-code.png
 
     mv VSCode-linux-${_vscode_arch} VSCode-OSS
     sudo mv VSCode-OSS /opt

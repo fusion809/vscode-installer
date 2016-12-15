@@ -4,11 +4,7 @@
 function fedora_build {
   # Get dependencies
   sudo dnf update
-  sudo dnf install -y make gcc gcc-c++ glibc-devel git-core libgnome-keyring-devel tar libX11-devel python createrepo rpmdevtools fakeroot
-  sudo dnf remove -y nodejs
-
-  node_build
-
+  sudo dnf install -y make gcc gcc-c++ glibc-devel git-core libgnome-keyring-devel tar libX11-devel python createrepo rpmdevtools fakeroot nodejs
   sudo npm install -g gulp node-gyp
 
   if ! [[ -f /usr/bin/gyp ]]; then

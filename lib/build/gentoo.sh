@@ -15,7 +15,7 @@ function gentoo_build {
     sudo emerge --autounmask-write net-libs/nodejs sys-devel/gcc sys-libs/glibc \
       dev-vcs/git gnome-base/gnome-keyring gnome-base/libgnome-keyring x11-libs/libX11 dev-lang/python:2.7
     sudo etc-update --automode -5
-    sudo emerge net-libs/nodejs sys-devel/gcc sys-libs/glibc \
+    sudo emerge net-libs/nodejs sys-devel/gcc sys-libs/glibc sys-apps/yarn \
       dev-vcs/git gnome-base/gnome-keyring gnome-base/libgnome-keyring x11-libs/libX11 dev-lang/python:2.7
 
     if ! $([[ -f /usr/bin/node ]] && [[ -f /usr/bin/gcc ]] && [[ -f /usr/bin/python ]]); then
